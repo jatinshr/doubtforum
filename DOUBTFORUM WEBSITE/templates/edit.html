@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/contact-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Edit/Add Post</h1>
+              <span class="subheading">{{post.title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <h3>Special Actions</h3>
+            <div>
+
+              <a href="/"><button class="btn btn-primary" >Home</button></a><br><br>
+              <a href="/logout"><button class="btn btn-primary" >Logout</button></a>
+
+              <hr>
+
+              <a href="/admin"><button class="btn btn-primary" >Control Panel</button></a>
+
+            </div>
+            <hr>
+
+
+
+          <h3>Edit/Add post</h3>
+          <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+          <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+          <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+          <form name="sentMessage" id="contactForm" action = "/edit/{{sno}}"  method="post" >
+            <div class="control-group">
+              <div class="wrap-input100 validate-input m-b-23">
+<!--                <label>Title</label>-->
+                <textarea rows="1" class="form-control" placeholder="Title" name = "title" id="message" required data-validation-required-message="Please enter new Title.">{{post.title}}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+             <div class="wrap-input100 validate-input m-b-23"  data-validation-required-message = "Username is reauired">
+                <input type="text" class="form-control" placeholder="Tag Line" id="name" name='tag_line' value='{{post.tag_line}}'>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="wrap-input100 validate-input m-b-23">
+<!--                <label>Slug</label>-->
+                <input type="text" class="form-control" placeholder="Slug" id="email" name="slug" required data-validation-required-message="Please enter new Slug" value='{{post.slug}}'>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="wrap-input100 validate-input m-b-23">
+<!--                <label>Content</label>-->
+                <textarea rows="5" class="form-control" placeholder="Content" name = "content" id="message" required data-validation-required-message="Please enter new Content.">{{post.content}}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            <div class="control-group">
+              <div class="wrap-input100 validate-input m-b-23">
+<!--                <label>Image File</label>-->
+                <input type="text" class="form-control" placeholder="Image File" name="img_file" id="name" required data-validation-required-message="Please enter the Image File." value='{{post.img_file}}'>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}

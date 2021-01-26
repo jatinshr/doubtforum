@@ -1,0 +1,18 @@
+{
+  "params": {
+    "local_server": true,
+    "local_uri": "mysql://root:@localhost/doubtforum",
+    "prod_uri": "mysql://root:@localhost/doubtforum",
+    "fb_url": "https://facebook.com/doubtforum",
+    "tw_url": "https://twitter.com/doubtforum",
+    "inst_url": "https://instagram.com/doubtforum",
+    "wts_url": "https://github.com/doubtforum",
+    "tg_url": "https://github.com/doubtforum",
+    "blog_name": "FREE DOUBT DISCUSSION",
+    "gmail-user": "gamechampionno1@gmail.com",
+    "gmail-password": "@sh_ketchum",
+    "name": "qwertyuiop",
+    "password": "1234567890"
+
+    }
+  }
